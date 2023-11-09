@@ -1,7 +1,13 @@
 {
-  "name": "qwik-google-maps-loader",
-  "version": "0.0.1",
+  "name": "mhu-qwik-google-maps",
+  "version": "0.0.2",
   "description": "Google Maps API Loader for QWIK",
+  "author": "Marton Papp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maprohu/public.git",
+    "directory": "qwik/google-maps"
+  },
   "main": "./lib/index.qwik.mjs",
   "qwik": "./lib/index.qwik.mjs",
   "types": "./lib-types/index.d.ts",

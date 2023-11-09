@@ -1,7 +1,12 @@
 # Google Maps Integration for QWIK
 
+Source code: https://github.com/maprohu/public/tree/master/qwik/google-maps
+
 Inpsired by: https://github.com/gioboa/qwik-google-maps
 
+# Example
+
+* https://github.com/maprohu/public/tree/master/sandbox/google/maps/qwik01
 
 
 # Qwik Library ⚡️
