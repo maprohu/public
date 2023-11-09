@@ -1,6 +1,6 @@
 {
   "name": "mhu-qwik-google-maps",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Google Maps API Loader for QWIK",
   "author": "Marton Papp",
   "repository": {
