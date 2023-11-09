@@ -1,0 +1,21 @@
+{
+  "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
+  "configurations": {
+    "azure": {
+      "appLocation": ".",
+      "apiLocation": "./azure-functions",
+      "dataApiLocation": "swa-db-connections",
+      "outputLocation": "./dist",
+      "appBuildCommand": "npm run build",
+      "resourceGroup": "default-resource-group",
+      "appName": "mhu-swa-db",
+      "apiLanguage": "node",
+      "apiVersion": "18",
+      "env": "production"
+    },
+    "dev": {
+      "appLocation": "./dev",
+      "dataApiLocation": "swa-db-connections"
+    }
+  }
+}
