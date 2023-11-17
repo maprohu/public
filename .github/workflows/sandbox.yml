@@ -1,0 +1,6 @@
+on: workflow_dispatch
+jobs:
+  sandbox:
+    runs-on: ubuntu-latest
+    steps:
+      - run: "echo hello!"
