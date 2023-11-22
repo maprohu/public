@@ -9,11 +9,11 @@ variable "github_app_installation_id" {
   type = number
 }
 variable "github_owner" {
-  type = number
+  type = string
 }
 variable "github_repo" {
-  type = number
+  type = string
 }
 variable "github_event_type" {
-  type = number
+  type = string
 }
