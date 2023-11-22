@@ -2,6 +2,9 @@ on:
   workflow_dispatch:
   repository_dispatch:
 
+concurrency:
+  group: repo-dispatch-hook
+
 jobs:
   build:
     runs-on: ubuntu-latest

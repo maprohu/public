@@ -66,3 +66,12 @@ resource "aws_lambda_function" "trigger_github_action" {
     }
   }
 }
+
+resource "aws_lambda_function_url" "lambda" {
+  function_name      = aws_lambda_function.trigger_github_action.function_name
+  authorization_type = "NONE"
+}
+
+output "function_url" {
+  value = aws_lambda_function_url.lambda.function_url
+}
