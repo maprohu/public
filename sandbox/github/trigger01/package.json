@@ -1,0 +1,19 @@
+{
+  "name": "trigger01",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc && node ./dist/cli.js",
+    "build": "esbuild src/lambda.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/lambda.js"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.128",
+    "esbuild": "^0.19.7",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "octokit": "^3.1.2"
+  }
+}

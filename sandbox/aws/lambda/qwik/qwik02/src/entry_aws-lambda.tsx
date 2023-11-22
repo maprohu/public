@@ -16,6 +16,7 @@ import qwikCityPlan from "@qwik-city-plan";
 import { manifest } from "@qwik-client-manifest";
 import serverless from "serverless-http";
 import render from "./entry.ssr";
+import type { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 
 declare global {
   interface QwikCityPlatform extends PlatformNode {}
@@ -66,3 +67,23 @@ function fixPath(path: string) {
   }
   return path;
 }
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const lambdaHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
+    try {
+        return {
+            statusCode: 200,
+            body: JSON.stringify({
+                message: 'hello world 2',
+            }),
+        };
+    } catch (err) {
+        console.log(err);
+        return {
+            statusCode: 500,
+            body: JSON.stringify({
+                message: 'some error happened',
+            }),
+        };
+    }
+};
