@@ -97,6 +97,7 @@ resource "null_resource" "yarn_build" {
   }
 }
 data "archive_file" "ui" {
+  depends_on = [null_resource.yarn_build]
   type        = "zip"
   source_dir  = "${path.module}/../../ui/dist"
   output_path = "${path.module}/../build/ui.zip"
@@ -169,7 +170,7 @@ resource "null_resource" "s3_sync" {
     }
   }
   triggers = {
-    always_run = data.archive_file.lambda.output_sha256
+    always_run = data.archive_file.ui.output_sha256
   }
 
 }
