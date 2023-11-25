@@ -12,7 +12,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::902641841166:role/github-maprohu-public-oidc-Role-NSzXTJIVifSF
+          role-to-assume: arn:aws:iam::902641841166:role/terraform-20231125174338873300000001
           aws-region: eu-central-1
       - run: |
           aws sts get-caller-identity
