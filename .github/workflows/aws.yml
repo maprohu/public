@@ -5,7 +5,16 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
-      - run: echo hello!
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::902641841166:role/github-maprohu-public-oidc-Role-NSzXTJIVifSF
+          aws-region: eu-central-1
+      - run: |
+          aws sts get-caller-identity
 
     
