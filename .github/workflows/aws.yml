@@ -1,6 +1,8 @@
 on:
   workflow_dispatch:
 
+concurrency:
+  group: github-workflow-aws
 
 jobs:
   deploy:
@@ -8,13 +10,30 @@ jobs:
     permissions:
       id-token: write
       contents: read
+
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - name: Use Terraform
+        uses: hashicorp/setup-terraform@v2
+
+      - name: Install ZX
+        run: npm install -g zx
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::902641841166:role/terraform-20231125174338873300000001
+          role-to-assume: arn:aws:iam::902641841166:role/terraform-20231126115254593700000001
           aws-region: eu-central-1
+
       - run: |
-          aws sts get-caller-identity
+          zx sandbox/github/aws/deploy/deploy.mjs
+          
 
     
