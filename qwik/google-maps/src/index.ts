@@ -1,5 +1,4 @@
 import { NoSerialize, QRL, createContextId, implicit$FirstArg, noSerialize, useContext, useContextProvider, useVisibleTask$ } from "@builder.io/qwik";
-import { Loader, LoaderOptions } from "google-maps";
 
 
 export type GoogleMapsApi = typeof google.maps;

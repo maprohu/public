@@ -6,8 +6,8 @@ import {
 } from "@builder.io/qwik-city";
 import { RouterHead } from "./components/router-head/router-head";
 
-import type { GoogleMapsLoaderProps} from "qwik-google-maps-loader";
-import { useGoogleMapsProvider } from "qwik-google-maps-loader";
+import type { GoogleMapsLoaderProps} from "mhu-qwik-google-maps";
+import { useGoogleMapsProvider } from "mhu-qwik-google-maps";
 
 import "./global.css";
 
