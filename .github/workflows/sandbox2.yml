@@ -1,0 +1,9 @@
+on: 
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  sandbox:
+    runs-on: ubuntu-latest
+    steps:
+      - run: "echo hello!"
